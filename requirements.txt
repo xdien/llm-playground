@@ -1,0 +1,9 @@
+transformers
+msgspec
+fastapi
+uvicorn
+requests
+accelerate
+sentencepiece
+protobuf
+pre-commit 
