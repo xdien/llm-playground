@@ -1,9 +1,12 @@
+vllm
 transformers
 msgspec
 fastapi
-uvicorn
+uvicorn[standard]
 requests
 accelerate
 sentencepiece
 protobuf
-pre-commit 
+pre-commit
+# PyTorch must be installed separately for ROCm support.
+# Please see the installation instructions in README.md. 

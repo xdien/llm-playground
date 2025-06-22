@@ -8,7 +8,7 @@ Follow these instructions to set up the project on your local machine.
 
 ### Prerequisites
 
-- Python 3.13+
+- Python 3.12 #vllm not support 3.13
 - Git
 
 ### Installation and Setup
@@ -34,14 +34,21 @@ Follow these instructions to set up the project on your local machine.
         ```
     *After activation, your command prompt should be prefixed with `(.venv-vllm)`.*
 
-3.  **Install Dependencies:**
+3.  **Install PyTorch for ROCm:**
 
-    Install all the required packages from `requirements.txt`:
+    This project requires a specific version of PyTorch compatible with ROCm. Install it using the following command:
+    ```bash
+    pip install torch --index-url https://download.pytorch.org/whl/rocm6.3
+    ```
+
+4.  **Install Other Dependencies:**
+
+    Install the rest of the required packages from `requirements.txt`:
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Set Up Pre-commit Hooks:**
+5.  **Set Up Pre-commit Hooks:**
 
     This project uses `pre-commit` to enforce code quality and standards (e.g., ensuring all comments are in English). Install the git hooks with this command:
     ```bash
