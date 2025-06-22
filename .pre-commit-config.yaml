@@ -1,0 +1,8 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: check-non-ascii-comments
+        name: Check for non-ASCII comments
+        entry: python check_comments.py
+        language: python
+        types: [python] 
