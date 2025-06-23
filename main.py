@@ -6,6 +6,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import uvicorn
 import os
+import json
 
 # Model config
 MODEL_NAME = "Qwen/Qwen1.5-7B-Chat"
@@ -112,7 +113,7 @@ async def chat_completions(request: Request):
                         }
                     ]
                 }
-                yield f"data: {data}\n\n"
+                yield f"data: {json.dumps(data)}\n\n"
             # End of stream
             yield "data: [DONE]\n\n"
         return StreamingResponse(event_stream(), media_type="text/event-stream")
